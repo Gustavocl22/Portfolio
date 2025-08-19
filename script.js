@@ -3,47 +3,60 @@ const navbar = document.getElementById("navbar");
 const navLinks = document.querySelectorAll(".navbar a");
 const sections = document.querySelectorAll("section");
 
+function toggleMenu() {
+    const isActive = navbar.classList.toggle("active");
+    menuIcon.setAttribute("aria-expanded", isActive);
+}
 
-menuIcon.addEventListener("click", () => {
-    navbar.classList.toggle("active");
-});
-
+menuIcon.addEventListener("click", toggleMenu);
 
 navLinks.forEach(link => {
     link.addEventListener("click", () => {
         if (window.innerWidth < 769) {
             navbar.classList.remove("active");
+            menuIcon.setAttribute("aria-expanded", false);
         }
     });
 });
 
-
-window.addEventListener("scroll", () => {
-    let currentSection = "";
+function highlightActiveSection() {
+    let activeSection = "";
 
     sections.forEach(section => {
         const sectionTop = section.offsetTop - 100;
         const sectionHeight = section.clientHeight;
 
         if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-            currentSection = section.getAttribute("id");
+            activeSection = section.getAttribute("id");
         }
     });
 
     navLinks.forEach(link => {
         link.classList.remove("active");
-        if (link.getAttribute("href").includes(currentSection)) {
+        if (link.getAttribute("href").includes(activeSection)) {
             link.classList.add("active");
         }
     });
-});
+}
 
+function debounce(func, wait = 20) {
+    let timeout;
+    return function (...args) {
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+}
 
-window.addEventListener("resize", () => {
+window.addEventListener("scroll", debounce(highlightActiveSection));
+
+function handleResize() {
     if (window.innerWidth >= 769) {
-        navbar.classList.add("desktop"); 
-        navbar.classList.remove("active"); 
+        navbar.classList.add("desktop");
+        navbar.classList.remove("active");
+        menuIcon.setAttribute("aria-expanded", false);
     } else {
-        navbar.classList.remove("desktop"); 
+        navbar.classList.remove("desktop");
     }
-});
+}
+
+window.addEventListener("resize", handleResize);
