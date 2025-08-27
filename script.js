@@ -60,3 +60,34 @@ function handleResize() {
 }
 
 window.addEventListener("resize", handleResize);
+
+function enviarMensagem(event) {
+    event.preventDefault();
+    const form = document.getElementById("formContato");
+    const statusDiv = document.getElementById("statusMensagem");
+    const botao = form.querySelector(".botao");
+    const honeypot = document.getElementById("apelido");
+
+    if (honeypot.value) {
+        statusDiv.textContent = "Erro: Detecção de bot!";
+        statusDiv.classList.add('mostrar');
+        return;
+    }
+
+    form.submit();
+
+    botao.classList.add('oculto');
+    statusDiv.textContent = "Enviando...";
+    statusDiv.classList.add('mostrar');
+
+    setTimeout(() => {
+        statusDiv.textContent = "✔ Mensagem enviada com sucesso!";
+        form.reset();
+
+        setTimeout(() => {
+            statusDiv.classList.remove('mostrar');
+            botao.classList.remove('oculto');
+            statusDiv.textContent = "";
+        }, 3000);
+    }, 500);
+}

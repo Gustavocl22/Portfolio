@@ -28,18 +28,17 @@ body {
 
 section {
     min-height: 100vh;
-    padding: 8rem 5% 2rem; 
+    padding: 8rem 5% 2rem;
     scroll-margin-top: 80px;
     padding-top: 80px;
 }
-
 
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1.5rem 5%; 
+    padding: 1.5rem 5%;
     background: rgba(13, 17, 23, 0.9);
     display: flex;
     justify-content: space-between;
@@ -53,6 +52,8 @@ section {
     color: var(--main-color);
     font-weight: 500;
     cursor: default;
+    text-decoration: none;
+
 }
 
 .header .navbar a {
@@ -61,11 +62,11 @@ section {
     margin-left: 3rem;
     position: relative;
     transition: color 0.3s, transform 0.3s;
+    text-decoration: none;
 }
 
 .header .navbar {
     display: flex;
-
 }
 
 .header .bx-menu {
@@ -79,7 +80,6 @@ section {
 .navbar a.active {
     color: var(--main-color);
     transform: scale(1.1);
-
 }
 
 #menu-icon {
@@ -90,11 +90,10 @@ section {
 }
 
 .home {
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem; 
+    gap: 2rem;
 }
 
 .home-img img {
@@ -103,12 +102,13 @@ section {
     border-radius: 50%;
     box-shadow: 0 0 2rem var(--main-color);
     object-fit: cover;
-
 }
 
 .home-content {
-    flex: 1;
-    text-align: left
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }
 
 .home-content h3 {
@@ -120,13 +120,17 @@ section {
     font-size: 3rem;
     color: var(--main-color);
     line-height: 1.3;
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
 }
 
 .home-content p {
     font-size: 1.6rem;
     margin: 1.5rem 0;
+}
 
+.social-media {
+    display: flex;
+    margin-bottom: 1.5rem;
 }
 
 .social-media a {
@@ -142,13 +146,27 @@ section {
     align-items: center;
     justify-content: center;
     transition: 0.3s;
-
+    text-decoration: none;
 }
 
 .social-media a:hover {
     background: var(--main-color);
     color: var(--second-bg-color);
     box-shadow: 0 0 1rem var(--main-color);
+}
+
+.btn-social.borda {
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--main-color);
+    font-size: 2rem;
+    background: none;
+    transition: border-color 0.2s, color 0.2s;
 }
 
 .botao {
@@ -161,22 +179,24 @@ section {
     box-shadow: 0 0 1rem var(--main-color);
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    position: relative;
-    top: 3rem;
+    border: none;
+    display: inline-block;
+    margin-top: 0.5rem;
 }
 
 .botao:hover {
-    box-shadow: none;
-    transform: scale(1.05);
     background: var(--accent-color);
     color: var(--text-color);
+    box-shadow: none;
+    transform: scale(1.05);
+    text-decoration: none;
 }
 
 .sobre {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 1.5rem; 
+    gap: 1.5rem;
     background: var(--second-bg-color);
     padding: 4rem 5%;
     border-radius: 1.5rem;
@@ -196,166 +216,155 @@ section {
 .sobre-content p {
     font-size: 1.8rem;
     margin-bottom: 2rem;
+    text-align: center;
 }
 
-.habilidade {
-    display: flex;
-    align-items: center;
-    background: rgba(0, 255, 255, 0.1);
-    padding: 10px;
-    border-radius: 8px;
-    width: 100%;
-    /*max-width: 250px;*/
-    text-align: left;
-    gap: 10px;
+.habilidades {
+    text-align: center;
+    padding: 4rem 2rem;
 }
 
 .habilidades h2 {
     font-size: 3rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     color: var(--main-color);
 }
 
 .habilidades-container {
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
     flex-wrap: wrap;
-    gap: 15px; 
-    width: 100%;
-    margin-top: 30px; 
+    justify-content: center;
+    gap: 2rem;
 }
 
 .habilidade-box {
-    background-color: var(--second-bg-color);
-    padding: 15px; 
-    border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
-    text-align: center;
-    width: 30%;
-    min-width: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 320px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.habilidades {
-    text-align: center;
-
+.habilidade-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
 }
 
-.habilidade-titulo {
-    font-size: 2rem;
+.habilidade-box h3 {
+    font-size: 1.8rem;
     color: var(--main-color);
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
 }
 
-
-.habilidade-desc {
-    font-size: 1.4rem;
-    color: var(--text-color);
-    margin-bottom: 15px;
-}
-
-.habilidades-lista {
+.habilidade-box ul {
+    list-style: none;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
 }
 
-.habilidade img {
-    width: 80px;
-    height: 80px;
-    object-fit: contain;
-    margin-bottom: 10px;
-}
-
-
-.habilidade-texto {
-    display: flex;
-    flex-direction: column;
-    
-}
-
-.habilidade-texto span {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--text-color);
-    display: block;
-}
-
-.habilidade-texto p {
-    font-size: 1rem;
-    color: var(--text-color);
+.habilidade-box li {
+    position: relative;
     display: flex;
     align-items: center;
-    text-align: left;
-    gap: 10px;
+    gap: 12px;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
-.portifolio {
+.habilidade-box li:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.habilidade-box img {
+    width: 40px;
+    height: 40px;
+}
+
+
+.portfolio {
     background: rgba(13, 17, 23, 0.9);
     padding: 5rem 6%;
     border-radius: 1.5rem;
 }
 
-.portifolio h2 {
+.portfolio h2 {
     font-size: 3rem;
     margin-bottom: 2rem;
     color: var(--main-color);
     text-align: center;
 }
 
-.portifolio-container {
+.portfolio-container {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
     gap: 2rem;
     margin: 0 auto;
 }
 
-.portifolio-item {
+.portfolio-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background: var(--second-bg-color);
     border-radius: 8px;
     overflow: hidden;
-    width: 30%;
-    height: auto; 
+    width: 25%;
+    min-height: 450px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
 }
 
-.portifolio-item:hover {
+.portfolio-item:hover {
     transform: scale(1.05);
 }
 
-.portifolio-item img {
+.portfolio-item img {
     width: 100%;
-    height: auto; 
+    height: 200px;
     object-fit: cover;
 }
 
-.portifolio-content {
+.portfolio-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 20px;
     text-align: center;
 }
 
-.portifolio-content h4 {
+.portfolio-content h4 {
     font-size: 1.8rem;
     margin-bottom: 10px;
     color: var(--main-color);
 }
 
-.portifolio-content p {
+.portfolio-content p {
     font-size: 1.2rem;
     margin-bottom: 10px;
     color: var(--text-color);
 }
 
-.portifolio-content strong {
+.portfolio-content strong {
     color: var(--main-color);
 }
 
-.portifolio-content a {
+.portfolio-buttons {
+    justify-content: center;
+    gap: 10px;
+}
+
+.portfolio-buttons a {
     display: inline-block;
-    margin-top: 10px;
     padding: 10px 20px;
     background-color: var(--main-color);
     color: var(--second-bg-color);
@@ -365,19 +374,17 @@ section {
     transition: background-color 0.3s ease;
 }
 
-.portifolio-content a:hover {
+.portfolio-buttons a:hover {
     background-color: var(--accent-color);
 }
 
 .github-btn {
     background-color: #333;
-    margin-left: 10px;
 }
 
 .github-btn:hover {
     background-color: #555;
 }
-
 
 .github-btn {
     display: inline-block;
@@ -390,7 +397,6 @@ section {
     margin-top: 10px;
     position: relative;
     left: -5px;
-
 }
 
 .github-btn:hover {
@@ -399,8 +405,6 @@ section {
 
 .footer {
     text-align: center;
-    padding: 10px;
-    background-color: var(--second-bg-color);
     color: #fff;
     font-size: 14px;
     position: relative;
@@ -408,7 +412,162 @@ section {
     width: 100%;
 }
 
+.contato {
+    background: var(--second-bg-color);
+    padding: 5rem 6%;
+    border-radius: 1.5rem;
+    text-align: center;
+}
 
+.contato h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--main-color);
+}
+
+.contato-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contato form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contato input,
+.contato textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--main-color);
+    border-radius: 0.5rem;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+.contato button {
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--second-bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+}
+
+.contato button:hover {
+    box-shadow: none;
+    transform: scale(1.05);
+    background: var(--accent-color);
+    color: var(--text-color);
+}
+
+.status-mensagem {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    display: none;
+    font-weight: 500;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.status-mensagem.mostrar {
+    display: block;
+    opacity: 1;
+}
+
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    border-top: 4px solid var(--main-color);
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    animation: spin 0.8s linear infinite;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.status-mensagem.sucesso {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.botao:disabled {
+    background: rgba(0, 255, 255, 0.3);
+    color: var(--text-color);
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.form-acao {
+    position: relative;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-acao .botao {
+    width: 100%;         
+    max-width: 200px;   
+    padding: 0.6rem 0;   
+    font-size: 1.3rem;   
+    border-radius: 2rem; 
+    margin: 0 auto;      
+    display: block;
+}
+
+.status-mensagem {
+    position: absolute;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--main-color);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.status-mensagem.mostrar {
+    opacity: 1;
+}
+
+.form-acao .botao.oculto {
+    display: none;
+}
+
+.contato-card {
+    background: rgba(13, 17, 23, 0.95);
+    border-radius: 1.5rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+    padding: 2.5rem 2rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.social-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* Media Queries Corrigidas */
 @media (max-width: 768px) {
     .home {
         margin-top: 80px;
@@ -418,7 +577,7 @@ section {
         padding: 4rem 9%;
     }
 
-    .selection {
+    section {
         padding-top: 120px;
     }
 
@@ -436,6 +595,7 @@ section {
     .home-content {
         margin-bottom: 2rem;
         text-align: center;
+        align-items: center;
     }
 
     .sobre,
@@ -456,10 +616,10 @@ section {
     .header .navbar {
         display: none;
         position: absolute;
-        top: 60%;
-        right: 0;
+        top: 69%;
+        right: 21px;
         flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.7);
+        background-color: rgba(0, 0, 0, 0.9);
         width: 200px;
         padding: 20px;
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
@@ -474,61 +634,18 @@ section {
     .header .navbar a {
         text-decoration: none;
         color: #fff;
-        font-size: 1em;
+        font-size: 1.2em;
         padding: 10px 0;
         border-bottom: 1px solid #444;
+        margin-left: 0;
+        text-align: center;
     }
 
     .header .bx-menu {
-        display: none;
+        display: block;
         font-size: 2em;
         cursor: pointer;
         color: #fff;
-    }
-}
-
-@media (max-width: 607px),
-(max-width: 679px),
-(max-width: 719px) {
-    .portifolio-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 605px) {
-    .portifolio-container {
-        grid-template-columns: 2fr;
-    }
-}
-
-
-@media (max-width: 768px) {
-    .habilidades-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .habilidade-box {
-        width: 80%;
-    }
-}
-
-
-@media (max-width: 1024px) {
-    .portifolio-container {
-        justify-content: center;
-    }
-
-    .portifolio-item {
-        width: 45%;
-    }
-}
-
-@media (max-width: 768px) {
-    .portifolio-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
     }
 
     .portifolio-item {
@@ -537,19 +654,46 @@ section {
 }
 
 @media (max-width: 480px) {
-    .portifolio h2 {
-        font-size: 2rem;
-    }
-
     .portifolio-item {
         width: 100%;
     }
 
-    .portifolio-content h4 {
-        font-size: 1.4rem;
+    .habilidade-box {
+        width: 90%;
     }
 
-    .portifolio-content p {
-        font-size: 1rem;
+    .header .navbar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .portfolio-item {
+        width: 45%;
+        /* 2 colunas em telas médias */
+        min-width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .portfolio-item {
+        width: 90%;
+        /* 1 coluna em telas pequenas */
+        min-width: 220px;
+        max-width: 400px;
+    }
+
+    .portfolio-content {
+        padding: 16px;
+    }
+
+    .portfolio-item img {
+        height: 160px;
     }
 }
