@@ -46,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('scroll', checkFade);
     checkFade();
+
     const sections = document.querySelectorAll('section');
     const navLinksList = document.querySelectorAll('.nav-links a');
 
@@ -66,8 +67,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    var parte1 = 'gustavocldeveloper'; 
-    var parte2 = '@gmail.com'; 
+    var parte1 = 'gustavocldeveloper';
+    var parte2 = '@gmail.com';
     var email = parte1 + parte2;
     var span = document.getElementById('email-obfuscado');
     if (span) {
@@ -140,4 +141,26 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
             button.textContent = originalText;
             button.disabled = false;
         });
+});
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                // Altura do header fixo
+                const header = document.getElementById('header');
+                const offset = header ? header.offsetHeight : 80;
+                const top = target.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top, behavior: 'smooth' });
+            }
+        }
+        // ...existing code for active class...
+        document.querySelectorAll('.nav-links a').forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+        hamburger.classList.remove('active');
+        navLinks.classList.remove('active');
+    });
 });

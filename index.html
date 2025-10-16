@@ -16,7 +16,7 @@
 
 <body>
     <!-- Header & Navigation -->
-    <header id="header">
+    <header id="header" class="fade-in">
         <div class="container">
             <nav>
                 <a href="#" class="logo">Dev<span>Portfolio</span></a>
@@ -37,7 +37,7 @@
     </header>
 
     <!-- Home Section -->
-    <section id="home">
+    <section id="home" class="fade-in">
         <div class="container">
             <div class="home-content">
                 <div class="home-text">
@@ -50,34 +50,35 @@
                     </div>
                 </div>
                 <div class="home-image">
-                    <img src="Image/Perfil.jpg" alt="Gustavo Catucci - Desenvolvedor" class="avatar">
+                    <img src="Image/Perfil.jpg" alt="Gustavo Catucci - Desenvolvedor" class="avatar"
+                        oncontextmenu="return false;" draggable="false"
+                        style="pointer-events: none; user-select: none;">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" class="fade-in">
         <div class="container">
             <h2 class="section-title">Sobre Mim</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Me chamo Gustavo Catucci, sou formado em Análise e Desenvolvimento de Sistemas pela UDF e
-                        atualmente estou cursando uma Pós-Graduação em Inteligência Artificial e Machine Learning. Desde
-                        cedo, sempre fui curioso sobre como a tecnologia pode impactar o mundo, e essa curiosidade me
-                        motivou a aprofundar meus conhecimentos em desenvolvimento de sistemas, análise de dados e
-                        soluções inteligentes.
+                    <p>
+                        Sou Gustavo Catucci, formado em Desenvolvimento de Sistemas e atualmente cursando pós-graduação
+                        em Inteligência Artificial e Machine Learning. Tenho sólida formação acadêmica e paixão por
+                        tecnologia e inovação, sempre buscando criar soluções que gerem impacto real e valor tanto para
+                        empresas quanto para clientes.
                     </p>
-
-                    <p>Sou apaixonado por tecnologia e pelo impacto que ela pode gerar. Gosto de explorar novas
-                        ferramentas e aprender continuamente para transformar ideias em soluções reais. Tenho interesse
-                        em áreas como desenvolvimento web, inteligência artificial e automação, buscando sempre evoluir
-                        minhas habilidades técnicas.</p>
-
-                    <p>Atualmente, estou em busca de oportunidades de trabalho na área de tecnologia, onde eu possa
-                        aplicar meus conhecimentos, crescer profissionalmente e colaborar com equipes que compartilham a
-                        mesma paixão por inovação. Meu objetivo é contribuir para projetos desafiadores, aprender com
-                        profissionais experientes e evoluir continuamente para acompanhar as tendências do setor.</p>
+                    <p>
+                        Atuo com foco em resultados, agilidade e qualidade, participando de projetos web, automação e
+                        análise de dados. Meu diferencial está na capacidade de unir visão estratégica, comunicação
+                        clara e atualização constante, colaborando de forma ativa com equipes multidisciplinares.
+                    </p>
+                    <p>
+                        Se você procura um profissional comprometido, criativo e preparado para desafios, conheça meu
+                        currículo e descubra como posso contribuir para o sucesso do seu projeto ou empresa.
+                    </p>
                     <a href="https://www.canva.com/design/DAGyItttK7Q/LH3BA9qy5DJvcqa-UXisZg/edit?utm_content=DAGyItttK7Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
                         class="btn" target="_blank" rel="noopener noreferrer">Visualizar CV</a>
                 </div>
@@ -86,7 +87,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills">
+    <section id="skills" class="fade-in">
         <div class="container">
             <h2 class="section-title">Habilidades & Tecnologias</h2>
 
@@ -171,12 +172,23 @@
                     </div>
 
                     <div class="skill-item">
-                        <div class="skill-icon reactnative-color">
-                            <i class="devicon-react-original "></i>
+                        <div class="skill-icon express-color">
+                            <i class="devicon-express-original"></i>
                         </div>
                         <div class="skill-content">
-                            <div class="skill-name">React <span class="highlight1">Native</span></div>
-                            <div class="skill-desc">Cria aplicativos para celular usando a mesma base do React.</div>
+                            <div class="skill-name">Express.js</div>
+                            <div class="skill-desc">Framework para criar APIs e rotas com facilidade.</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-icon csharp-color">
+                            <i class="devicon-csharp-plain"></i>
+                        </div>
+                        <div class="skill-content">
+                            <div class="skill-name">C#</div>
+                            <div class="skill-desc">Linguagem robusta para aplicações web, APIs e sistemas corporativos.
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -235,7 +247,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects">
+    <section id="projects" class="fade-in">
         <div class="container">
             <h2 class="section-title">Meus Projetos</h2>
             <div class="projects-container">
@@ -251,7 +263,7 @@
                         <div class="project-tech">
                             <span class="tech-tag">React</span>
                             <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">PostgreSQL</span>
                             <span class="tech-tag">TypeScript</span>
                             <span class="tech-tag">C#</span>
                             <span class="tech-tag">Docker</span>
@@ -264,7 +276,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="project-card fade-in">
                     <div class="project-image">
                         <img src="Projeto/Formulario.png" alt="Formulário de Cadastro">
@@ -287,7 +298,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="project-card fade-in">
                     <div class="project-image">
                         <img src="Projeto/Dashboard Financeiro.png" alt="projeto em construção">
@@ -314,7 +324,7 @@
                         </div>
                     </div>
                 </div>
-                 <div class="project-card fade-in">
+                <div class="project-card fade-in">
                     <div class="project-image">
                         <img src="Projeto/Construcao.png" alt="projeto em construção">
                     </div>
@@ -334,12 +344,12 @@
                             <a href="#project"><i class="fab fa-github"></i> Código</a>
                         </div>
                     </div>
+                </div>
             </div>
-        </div>
     </section>
 
-    <!-- Contact Section - NOVA SEÇÃO -->
-    <section id="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="fade-in">
         <div class="container">
             <h2 class="section-title">Entre em Contato</h2>
             <div class="contact-container">
@@ -382,7 +392,7 @@
 
                 <div class="contact-form">
                     <h3>Envie uma Mensagem</h3>
-                                                                            
+
                     <form id="contactForm" action="https://formsubmit.co/0927d4d6b133f103aa255a97e2546bf7"
                         method="POST">
                         <input type="text" name="_honey" style="display:none">
@@ -417,7 +427,7 @@
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer-content">
         <div class="footer-content">
             <p class="copyright">© 2025 Gustavo Catucci. Todos os direitos reservados.</p>
         </div>
